@@ -88,9 +88,3 @@ sudo ldconfig
 # cleaning (frees 300 MB)
 make clean
 sudo apt-get update
-
-
-wget https://github.com/Qengineering/Tensorflow-Raspberry-Pi/raw/master/tensorflow-2.1.0-cp37-cp37m-linux_armv7l.whl
-
-
-wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-5-2.sh
