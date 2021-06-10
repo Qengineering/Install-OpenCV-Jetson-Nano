@@ -88,3 +88,4 @@ sudo ldconfig
 # cleaning (frees 300 MB)
 make clean
 sudo apt-get update
+
