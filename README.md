@@ -22,3 +22,4 @@ $ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenC
 $ sudo chmod 755 ./OpenCV-4-5-x.sh
 $ ./OpenCV-4-5-x.sh
 ```
+:point_right: Don't forget to reset your swap memory afterwards.
