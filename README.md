@@ -14,7 +14,10 @@ For more information see [Q-engineering - Install OpenCV Jetson Nano](https://qe
 You must have allocated more memory than the default on your Nano.<br/>
 With the regular 4 GB RAM + 2 GB swap the compilation unfortunately crashes after 2 hours at 100%
 ```
-# check your total memory first you need at least a total of 6.5 GB!
+# check your total memory (RAM + swap) first. You need at least a total of:
+# OpenCV 4.5.2 -> 8.5 GB!
+# OpenCV 4.5.1 -> 6.5 GB
+# OpenCV 4.5.0 -> 6.5 GB
 # if not, enlarge your swap space as explained in the guide
 $ free -m
 
