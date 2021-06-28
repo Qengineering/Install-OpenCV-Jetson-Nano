@@ -82,8 +82,8 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D BUILD_EXAMPLES=OFF ..
 
 # run make
-FREE_MEM="$(free -m | awk '/^Mem/ {print $2}')"
-# Use "-j 4" only memory is larger than 3.5GB
+FREE_MEM="$(free -m | awk '/^Swap/ {print $2}')"
+# Use "-j 4" only swap space is larger than 3.5GB
 if [[ "FREE_MEM" -gt "3500" ]]; then
   NO_JOB=4
 else
