@@ -12,14 +12,15 @@ For more information see [Q-engineering - Install OpenCV Jetson Nano](https://qe
 
 ## Installing OpenCV.
 The default memory (4 GB RAM + 2 GB swap) on your Nano is not enough for a quick build.<br/>
-In this case the compilation will be performed by 1 core.<br/>
+In this case the compilation will be done by 1 core, which will take a long time.<br/>
 You must have more memory allocated to your Nano for the fast 4 core build.<br/>
 ```
 # check your total memory (RAM + swap) first for a fast build. You need at least a total of:
 # OpenCV 4.5.2 -> 8.5 GB!
 # OpenCV 4.5.1 -> 6.5 GB
 # OpenCV 4.5.0 -> 6.5 GB
-# if not, enlarge your swap space as explained in the guide
+# if not, enlarge your swap space as explained in the guide, 
+# or only 1 core is used for the compilation.
 $ free -m
 
 $ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-5-x.sh
