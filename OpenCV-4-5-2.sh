@@ -25,8 +25,10 @@ sudo apt-get install -y liblapack-dev libeigen3-dev gfortran
 sudo apt-get install -y libhdf5-dev protobuf-compiler
 sudo apt-get install -y libprotobuf-dev libgoogle-glog-dev libgflags-dev
 
-# download the latest version
+# remove old versions or previous builds
 cd ~ 
+sudo rm -rf opencv*
+# download the latest version
 wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.2.zip 
 wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.2.zip 
 # unpack
@@ -79,7 +81,14 @@ cmake -D CMAKE_BUILD_TYPE=RELEASE \
 -D BUILD_EXAMPLES=OFF ..
 
 # run make
-make -j4
+FREE_MEM="$(free -m | awk '/^Mem/ {print $2}')"
+# Use "-j 4" only memory is larger than 5.5GB
+if [[ "FREE_MEM" -gt "5500" ]]; then
+  NO_JOB=4
+else
+  NO_JOB=1
+fi
+make -j ${NO_JOB} 
 
 sudo rm -r /usr/include/opencv4/opencv2
 sudo make install
