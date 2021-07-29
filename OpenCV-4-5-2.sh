@@ -98,3 +98,5 @@ sudo ldconfig
 make clean
 sudo apt-get update
 
+echo "Congratulations!"
+echo "You've successfully installed OpenCV 4.5.2 on your Raspberry Pi 64-bit OS"
