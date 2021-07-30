@@ -38,3 +38,13 @@ If you want to beautify OpenCV with the Qt5 GUI you need to
  
 before running the script on your Nano
 
+------------
+
+OpenCV will be installed to the `/usr` directory, all files will be copied to following locations:<br/>
+
+- `/usr/bin` - executable files<br/>
+- `/usr/lib/aarch64-linux-gnu` - libraries (.so)<br/>
+- `/usr/lib/aarch64-linux-gnu/cmake/opencv4` - cmake package<br/>
+- `/usr/include/opencv4` - headers<br/>
+- `/usr/share/opencv4` - other files (e.g. trained cascades in XML format)<br/>
+
