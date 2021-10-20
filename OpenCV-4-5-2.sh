@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 echo "Installing OpenCV 4.5.2 on your Jetson Nano"
 echo "It will take 2 hours !"
 
@@ -85,6 +86,7 @@ FREE_MEM="$(free -m | awk '/^Swap/ {print $2}')"
 if [[ "FREE_MEM" -gt "5500" ]]; then
   NO_JOB=4
 else
+  echo "Due to limited swap, make only uses 1 core"
   NO_JOB=1
 fi
 make -j ${NO_JOB} 
