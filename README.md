@@ -16,6 +16,7 @@ In this case the compilation will be done by 1 core, which will take a long time
 You must have more memory allocated to your Nano for the fast 4 core build.<br/>
 ```
 # check your total memory (RAM + swap) first for a fast build. You need at least a total of:
+# OpenCV 4.5.4 -> 8.5 GB!
 # OpenCV 4.5.3 -> 8.5 GB!
 # OpenCV 4.5.2 -> 8.5 GB!
 # OpenCV 4.5.1 -> 6.5 GB
