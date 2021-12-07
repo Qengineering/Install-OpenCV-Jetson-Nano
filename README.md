@@ -49,3 +49,8 @@ OpenCV will be installed to the `/usr` directory, all files will be copied to fo
 - `/usr/include/opencv4` - headers<br/>
 - `/usr/share/opencv4` - other files (e.g. trained cascades in XML format)<br/>
 
+------------
+
+[![paypal](https://qengineering.eu/images/TipJarSmall4.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CPZTM5BB3FCYL) 
+
+
