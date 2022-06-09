@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-echo "Installing OpenCV 4.5.6 on your Jetson Nano"
+echo "Installing OpenCV 4.6.0 on your Jetson Nano"
 echo "It will take 3 hours !"
 
 # reveal the CUDA location
@@ -32,14 +32,14 @@ sudo apt-get install -y libprotobuf-dev libgoogle-glog-dev libgflags-dev
 cd ~ 
 sudo rm -rf opencv*
 # download the latest version
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.6.zip 
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.6.zip 
+wget -O opencv.zip https://github.com/opencv/opencv/archive/4.6.0.zip 
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.6.0.zip 
 # unpack
 unzip opencv.zip 
 unzip opencv_contrib.zip 
 # some administration to make live easier later on
-mv opencv-4.5.6 opencv
-mv opencv_contrib-4.5.6 opencv_contrib
+mv opencv-4.6.0 opencv
+mv opencv_contrib-4.6.0 opencv_contrib
 # clean up the zip files
 rm opencv.zip
 rm opencv_contrib.zip
@@ -102,4 +102,4 @@ make clean
 sudo apt-get update
 
 echo "Congratulations!"
-echo "You've successfully installed OpenCV 4.5.6 on your Jetson Nano"
+echo "You've successfully installed OpenCV 4.6.0 on your Jetson Nano"
