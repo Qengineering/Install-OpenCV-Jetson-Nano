@@ -18,7 +18,7 @@ sudo apt-get install -y python-dev python-numpy python-pip
 sudo apt-get install -y python3-dev python3-numpy python3-pip
 sudo apt-get install -y libxvidcore-dev libx264-dev libgtk-3-dev
 sudo apt-get install -y libtbb2 libtbb-dev libdc1394-22-dev libxine2-dev
-sudo apt-get install -y gstreamer1.0-tools libv4l-dev v4l-utils v4l2ucp  qv4l2 
+sudo apt-get install -y gstreamer1.0-tools libv4l-dev v4l-utils qv4l2 
 sudo apt-get install -y libgstreamer-plugins-base1.0-dev libgstreamer-plugins-good1.0-dev
 sudo apt-get install -y libavresample-dev libvorbis-dev libxine2-dev libtesseract-dev
 sudo apt-get install -y libfaac-dev libmp3lame-dev libtheora-dev libpostproc-dev
