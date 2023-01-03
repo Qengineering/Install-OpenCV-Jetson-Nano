@@ -16,6 +16,7 @@ In this case the compilation will be done by 1 core, which will take a long time
 You must have more memory allocated to your Nano for the fast 4 core build.<br/>
 ```
 # check your total memory (RAM + swap) first for a fast build. You need at least a total of:
+# OpenCV 4.7.0 -> 8.5 GB!
 # OpenCV 4.6.0 -> 8.5 GB!
 # OpenCV 4.5.5 -> 8.5 GB!
 # OpenCV 4.5.4 -> 8.5 GB!
@@ -27,9 +28,9 @@ You must have more memory allocated to your Nano for the fast 4 core build.<br/>
 # or only 1 core is used for the compilation.
 $ free -m
 
-$ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-5-x.sh
-$ sudo chmod 755 ./OpenCV-4-5-x.sh
-$ ./OpenCV-4-5-x.sh
+$ wget https://github.com/Qengineering/Install-OpenCV-Jetson-Nano/raw/main/OpenCV-4-7-0.sh
+$ sudo chmod 755 ./OpenCV-4-7-0.sh
+$ ./OpenCV-4-7-0.sh
 ```
 :point_right: Don't forget to reset your swap memory afterwards.
 
