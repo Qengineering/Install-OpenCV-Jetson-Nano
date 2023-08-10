@@ -31,17 +31,8 @@ sudo apt-get install -y libprotobuf-dev libgoogle-glog-dev libgflags-dev
 cd ~ 
 sudo rm -rf opencv*
 # download the latest version
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.8.0.zip 
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.8.0.zip 
-# unpack
-unzip opencv.zip 
-unzip opencv_contrib.zip 
-# some administration to make live easier later on
-mv opencv-4.8.0 opencv
-mv opencv_contrib-4.8.0 opencv_contrib
-# clean up the zip files
-rm opencv.zip
-rm opencv_contrib.zip
+git clone --depth=1 https://github.com/opencv/opencv.git
+git clone --depth=1 https://github.com/opencv/opencv_contrib.git
 
 # set install dir
 cd ~/opencv
