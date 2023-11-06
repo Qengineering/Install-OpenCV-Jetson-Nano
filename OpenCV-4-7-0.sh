@@ -1,6 +1,6 @@
 #!/bin/bash
 set -e
-
+install_opencv () {
 echo "Installing OpenCV 4.7.0 on your Jetson Nano"
 echo "It will take 3.5 hours !"
 
@@ -102,3 +102,25 @@ sudo apt-get update
 
 echo "Congratulations!"
 echo "You've successfully installed OpenCV 4.7.0 on your Jetson Nano"
+}
+
+cd ~
+
+if [ -d ~/opencv/build ]; then
+  echo " "
+  echo "You have a directory ~/opencv/build on your disk."
+  echo "Continuing the installation will replace this folder."
+  echo " "
+  
+  printf "Do you wish to continue (Y/n)?"
+  read answer
+
+  if [ "$answer" != "${answer#[Nn]}" ] ;then 
+      echo "Leaving without installing OpenCV"
+  else
+      install_opencv
+  fi
+else
+    install_opencv
+fi
+
