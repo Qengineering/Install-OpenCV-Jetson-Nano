@@ -81,7 +81,7 @@ install_opencv () {
   # set install dir
   cd ~/opencv
   mkdir build
-  cd builds
+  cd build
   
   # run cmake
   cmake -D CMAKE_BUILD_TYPE=RELEASE \
