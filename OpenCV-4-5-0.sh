@@ -129,7 +129,11 @@ install_opencv () {
  
   make -j ${NO_JOB} 
   
-  sudo rm -r /usr/include/opencv4/opencv2
+  directory="/usr/include/opencv4/opencv2"
+  if [ -d "$directory" ]; then
+    # Directory exists, so delete it
+    sudo rm -rf "$directory"
+  fi
   sudo make install
   sudo ldconfig
   
