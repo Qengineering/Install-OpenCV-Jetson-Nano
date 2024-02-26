@@ -133,7 +133,7 @@ install_opencv () {
   sudo apt-get update
   
   echo "Congratulations!"
-  echo "You've successfully installed OpenCV 4.8.0 on your Nano"
+  echo "You've successfully installed OpenCV 4.9.0 on your Nano"
 }
 
 cd ~
