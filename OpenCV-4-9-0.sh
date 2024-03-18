@@ -117,7 +117,7 @@ install_opencv () {
   -D OPENCV_GENERATE_PKGCONFIG=ON \
   -D BUILD_EXAMPLES=OFF \
   -D CMAKE_CXX_FLAGS="-march=native -mtune=native" \
-  -D CMAKE_C_FLAGS="-march=native -mtune=native"..
+  -D CMAKE_C_FLAGS="-march=native -mtune=native" ..
  
   make -j ${NO_JOB} 
   
