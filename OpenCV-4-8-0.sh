@@ -7,7 +7,7 @@ install_opencv () {
       model=$(tr -d '\0' < /proc/device-tree/model)
       # Check if the model information contains "Jetson Nano Orion"
       echo ""
-      if [[ $model == *"Orin Nano"* ]]; then
+      if [[ $model == *"Orin"* ]]; then
           echo "Detecting a Jetson Nano Orin."
 	  # Use always "-j 4"
           NO_JOB=4
