@@ -35,7 +35,7 @@ install_opencv () {
       exit 1
   fi
   
-  echo "Installing OpenCV 4.9.0 on your Nano"
+  echo "Installing OpenCV 4.10.0 on your Nano"
   echo "It will take 3.5 hours !"
   
   # reveal the CUDA location
@@ -151,7 +151,7 @@ install_opencv () {
   sudo apt-get update
   
   echo "Congratulations!"
-  echo "You've successfully installed OpenCV 4.9.0 on your Nano"
+  echo "You've successfully installed OpenCV 4.10.0 on your Nano"
 }
 
 cd ~
