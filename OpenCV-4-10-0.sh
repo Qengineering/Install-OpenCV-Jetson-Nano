@@ -91,9 +91,17 @@ install_opencv () {
   cd ~ 
   sudo rm -rf opencv*
   # download the latest version
-  git clone --depth=1 https://github.com/opencv/opencv.git
-  git clone --depth=1 https://github.com/opencv/opencv_contrib.git
+  wget -O opencv.zip https://github.com/opencv/opencv/archive/4.10.0.zip 
+  wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.10.0.zip 
   
+  # unpack
+  unzip opencv.zip 
+  unzip opencv_contrib.zip 
+
+  # Some administration to make life easier later on
+  mv opencv-4.10.0 opencv
+  mv opencv_contrib-4.10.0 opencv_contrib
+
   # set install dir
   cd ~/opencv
   mkdir build
