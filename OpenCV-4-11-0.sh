@@ -50,7 +50,7 @@ install_opencv () {
     sudo apt-get install -y python-dev python-numpy
     sudo apt-get install -y gstreamer1.0-tools libgstreamer-plugins-base1.0-dev
     sudo apt-get install -y libgstreamer-plugins-good1.0-dev
-    sudo apt-get install -y libtbb2 libgtk-3-dev v4l2ucp libxine2-dev
+    sudo apt-get install -y libtbb2 libgtk-3-dev libxine2-dev
   fi
   
   if [ -f /etc/os-release ]; then
