@@ -15,16 +15,48 @@ install_opencv () {
           PTX="sm_87"
       elif [[ $model == *"Jetson Nano"* ]]; then
           echo "Detecting a regular Jetson Nano."
+
+	# Check GCC version
+	GCC_MAJOR_VERSION=$(gcc -dumpversion | cut -d. -f1)
+	if [[ "$GCC_MAJOR_VERSION" -ge 9 ]]; then
+		  echo ""
+		  echo "Detected GCC version $GCC_MAJOR_VERSION, which is too new for Jetson Nano CUDA compatibility."
+		  echo "OpenCV will fail to compile with this version."
+		  echo ""
+	
+		  if [ -x /usr/bin/gcc-8 ] && [ -x /usr/bin/g++-8 ]; then
+		      echo "GCC 8 is available on your system."
+	
+		      printf "Do you want to temporarily switch to GCC 8 for this installation (Y/n)? "
+		      read confirm_switch
+	
+		      if [[ "$confirm_switch" != "${confirm_switch#[Nn]}" ]]; then
+			  echo "Aborting installation as requested."
+			  exit 1
+		      fi
+	
+		      echo "Switching to GCC 8..."
+		      sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-8 80
+		      sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-8 80
+		      sudo update-alternatives --set gcc /usr/bin/gcc-8
+		      sudo update-alternatives --set g++ /usr/bin/g++-8
+		  else
+		      echo "GCC 8 is not installed. Please install it using:"
+		      echo "  sudo apt-get install gcc-8 g++-8"
+		      exit 1
+		  fi
+	fi
+	
           ARCH=5.3
           PTX="sm_53"
-	  # Use "-j 4" only swap space is larger than 5.5GB
-	  FREE_MEM="$(free -m | awk '/^Swap/ {print $2}')"
-	  if [[ "FREE_MEM" -gt "5500" ]]; then
-	    NO_JOB=4
-	  else
-	    echo "Due to limited swap, make only uses 1 core"
-	    NO_JOB=1
-	  fi
+					# Use "-j 4" only swap space is larger than 5.5GB
+					FREE_MEM="$(free -m | awk '/^Swap/ {print $2}')"
+					if [[ "FREE_MEM" -gt "5500" ]]; then
+						NO_JOB=4
+					else
+						echo "Due to limited swap, make only uses 1 core"
+						NO_JOB=1
+					fi
       else
           echo "Unable to determine the Jetson Nano model."
           exit 1
