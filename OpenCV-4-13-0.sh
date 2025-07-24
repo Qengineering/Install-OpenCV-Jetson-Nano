@@ -15,6 +15,7 @@ install_opencv () {
           PTX="sm_87"
       elif [[ $model == *"Jetson Nano"* ]]; then
           echo "Detecting a regular Jetson Nano."
+
 	# Check GCC version
 	GCC_MAJOR_VERSION=$(gcc -dumpversion | cut -d. -f1)
 	if [[ "$GCC_MAJOR_VERSION" -ge 9 ]]; then
@@ -45,16 +46,17 @@ install_opencv () {
 		      exit 1
 		  fi
 	fi
+	
           ARCH=5.3
           PTX="sm_53"
-	  # Use "-j 4" only swap space is larger than 5.5GB
-	  FREE_MEM="$(free -m | awk '/^Swap/ {print $2}')"
-	  if [[ "FREE_MEM" -gt "5500" ]]; then
-	    NO_JOB=4
-	  else
-	    echo "Due to limited swap, make only uses 1 core"
-	    NO_JOB=1
-	  fi
+					# Use "-j 4" only swap space is larger than 5.5GB
+					FREE_MEM="$(free -m | awk '/^Swap/ {print $2}')"
+					if [[ "FREE_MEM" -gt "5500" ]]; then
+						NO_JOB=4
+					else
+						echo "Due to limited swap, make only uses 1 core"
+						NO_JOB=1
+					fi
       else
           echo "Unable to determine the Jetson Nano model."
           exit 1
@@ -65,7 +67,7 @@ install_opencv () {
       exit 1
   fi
   
-  echo "Installing OpenCV 4.11.0 on your Nano"
+  echo "Installing OpenCV 4.13.0 on your Nano"
   echo "It will take 3.5 hours !"
   
   # reveal the CUDA location
@@ -121,17 +123,9 @@ install_opencv () {
   cd ~ 
   sudo rm -rf opencv*
   # download the latest version
-  wget -O opencv.zip https://github.com/opencv/opencv/archive/4.11.0.zip 
-  wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.11.0.zip 
+  git clone --depth=1 https://github.com/opencv/opencv.git
+  git clone --depth=1 https://github.com/opencv/opencv_contrib.git
   
-  # unpack
-  unzip opencv.zip 
-  unzip opencv_contrib.zip 
-
-  # Some administration to make life easier later on
-  mv opencv-4.11.0 opencv
-  mv opencv_contrib-4.11.0 opencv_contrib
-
   # set install dir
   cd ~/opencv
   mkdir build
@@ -189,7 +183,7 @@ install_opencv () {
   sudo apt-get update
   
   echo "Congratulations!"
-  echo "You've successfully installed OpenCV 4.11.0 on your Nano"
+  echo "You've successfully installed OpenCV 4.13.0 on your Nano"
 }
 
 cd ~
