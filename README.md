@@ -61,6 +61,15 @@ OpenCV will be installed in the `/usr` directory, all files will be copied to th
 
 ------------
 
+⚠️ Note (NumPy 2.x users)
+If you encounter _ARRAY_API not found or “compiled against NumPy 1.x” errors with OpenCV:<br>
+- Make sure only one NumPy version is installed (pip uninstall numpy -y && pip install numpy==2.x).<br>
+- Use -D PYTHON3_NUMPY_INCLUDE_DIRS=$(python3 -c "import numpy; print(numpy.get_include())") in the CMake command.<br>
+- Ensure pybind11>=2.13 before building.<br.
+- Or temporarily use numpy<2.0 until OpenCV 4.11.1 adds full NumPy 2.x C-API support.<br>
+
+------------
+
 [![paypal](https://qengineering.eu/images/TipJarSmall4.png)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=CPZTM5BB3FCYL) 
 
 
