@@ -19,7 +19,7 @@ install_opencv () {
           PTX="sm_53"
 	  # Use "-j 4" only swap space is larger than 5.5GB
 	  FREE_MEM="$(free -m | awk '/^Swap/ {print $2}')"
-	  if [[ "FREE_MEM" -gt "5500" ]]; then
+	  if [[ "$FREE_MEM" -gt "5500" ]]; then
 	    NO_JOB=4
 	  else
 	    echo "Due to limited swap, make only uses 1 core"
