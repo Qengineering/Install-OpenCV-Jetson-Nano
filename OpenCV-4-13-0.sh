@@ -122,9 +122,9 @@ install_opencv () {
   # remove old versions or previous builds
   cd ~ 
   sudo rm -rf opencv*
-  # download the latest version
-  git clone --depth=1 https://github.com/opencv/opencv.git
-  git clone --depth=1 https://github.com/opencv/opencv_contrib.git
+  # download version 4.13
+  wget -O opencv.zip https://github.com/opencv/opencv/archive/4.13.0.zip 
+  wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.13.0.zip 
   
   # set install dir
   cd ~/opencv
