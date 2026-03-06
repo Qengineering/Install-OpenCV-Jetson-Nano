@@ -125,6 +125,16 @@ install_opencv () {
   # download version 4.13
   wget -O opencv.zip https://github.com/opencv/opencv/archive/4.13.0.zip 
   wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.13.0.zip 
+
+  # unpack
+  unzip opencv.zip 
+  unzip opencv_contrib.zip 
+  # Some administration to make life easier later on
+  mv opencv-4.13.0 opencv
+  mv opencv_contrib-4.13.0 opencv_contrib
+  # clean up the zip files
+  rm opencv.zip
+  rm opencv_contrib.zip
   
   # set install dir
   cd ~/opencv
